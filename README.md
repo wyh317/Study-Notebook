@@ -11,5 +11,8 @@
 * [传输层](https://github.com/wyh317/Study-Notebook/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BC%A0%E8%BE%93%E5%B1%82.md)
 * [网络层](https://github.com/wyh317/Study-Notebook/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%BD%91%E7%BB%9C%E5%B1%82.md)
 
+## Java
+* [Java虚拟机](https://github.com/wyh317/Study-Notebook/blob/master/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/Java%E8%99%9A%E6%8B%9F%E6%9C%BA.md)
+
 ## 工具
 * [Git](https://github.com/wyh317/Study-Notebook/blob/master/git.md)
