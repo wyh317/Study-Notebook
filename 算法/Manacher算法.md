@@ -44,11 +44,65 @@ public String longestPalindrome(String s) {
 
 在回文右边界和回文左边界中的字符串是回文串。假设最右回文右边界R的中心是c，当前位置i关于c在其左边的对称位置为i'。
 
+![](Manacher.jpg)
+
 算法步骤：  
 分析四种情况
-* i在R外，用暴力法扩展。
-* i在R里，i'的回文半径整体彻底在L（回文左边界）和R的内部，那么以i为中心的回文长度等于以i'为中心的回文长度
-* i在R里，i'的回文半径在L和R的外面，那么以i为中心的回文长度等于i到R的距离
-* i在R里，i'的回文左边界和L压线，从R的右边开始扩展（i到R的区域肯定在i的回文半径里，不需扩展。R右边是否在i的回文半径里还不清楚，需要扩展才知道)
+1. i在R外，用暴力法扩展。
+2. i在R里，i'的回文半径整体彻底在L（回文左边界）和R的内部，那么以i为中心的回文半径等于以i'为中心的回文半径
+3. i在R里，i'的回文半径在L和R的外面，那么以i为中心的回文半径等于i到R的距离
+4. i在R里，i'的回文左边界和L压线，那么要将i'的回文半径继续向外扩展（i到R的区域肯定在i的回文半径里，不需扩展。R右边是否在i的回文半径里还不清楚，需要扩展才知道)
 
-上面四种情况中，需要扩展的只有情况1和情况4，对于情况2和情况3，以i为中心的回文长度可以用O(1)的时间开销直接得出。而情况1和情况4在扩展时，R只能不断向右扩。只要进行一次成功的扩展，R都必然会增加。也就是说R最多就是从0位置到n位置（n为字符串长度)且R不会回退，所以***整个Manacher算法的时间复杂度为O(N)***
+上面四种情况中，需要扩展的只有情况1和情况4，对于情况2和情况3，以i为中心的回文半径可以用O(1)的时间开销直接得出。而情况1和情况4在扩展时，R不断向右扩。只要进行一次成功的扩展，R都必然会增加。也就是说R最多就是从0位置到n位置（n为字符串长度)且R不会回退，所以***整个Manacher算法的时间复杂度为O(N)***
+
+```java
+//给定一个字符串，返回它的最长回文字串长度
+public static int manacher(String str) {
+    if (str == null || str.length() == 0) {
+        return 0;
+    }
+    //将字符串扩展为manacher字符串（每个字符中间和字符串前后加#)
+    //因为扩展后字符串长度翻倍，因此求扩展后的字符串的最大回文半径，即求原来字符串的最大回文直径
+    char[] charArr = manacherString(str);
+    //pArr为回文半径数组
+    int[] pArr = new int[charArr.length];
+    int C = -1;
+    int R = -1;
+    //max记录最长的回文半径长度
+    int max = Integer.MIN_VALUE;
+    for (int i = 0; i != charArr.length; i++) {
+        //i在R里时：对于情况2和3，在i'的回文半径和i与R的距离中取较小值，即为i的回文半径
+                 //对于情况4，先将回文半径设为R-i，再在之后while循环中将回文半径继续向外扩展
+        //i在R外时，先将i位置的回文半径置为1，之后再在while循环里扩展
+        pArr[i] = R > i ? Math.min(pArr[2 * C - i], R - i) : 1;
+        //情况2和情况3即使进入了该while循环，但是第一次if都不会成立，会直接break退出循环
+        //只有情况1和情况4会在while循环里进行回文半径的扩展。
+        while (i + pArr[i] < charArr.length && i - pArr[i] > -1) {
+            if (charArr[i + pArr[i]] == charArr[i - pArr[i]])
+                pArr[i]++;
+            else {
+                break;
+            }
+        }
+        //更新最大回文右边界R和其对应的回文中心C
+        if (i + pArr[i] > R) {
+            R = i + pArr[i];
+            C = i;
+        }
+        //更新max
+        max = Math.max(max, pArr[i]);
+    }
+    return max - 1;
+}
+
+//生成manacher字符串，将给定字符串str的两端和每个字符中间全加上特殊符号#
+public static char[] manacherString(String str) {
+    char[] charArr = str.toCharArray();
+    char[] res = new char[str.length() * 2 + 1];
+    int C = 0;
+    for (int i = 0; i != res.length; i++) {
+        res[i] = (i & 1) == 0 ? '#' : charArr[C++];
+    }
+    return res;
+}
+```
