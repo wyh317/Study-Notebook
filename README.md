@@ -5,6 +5,7 @@
 * [KMP算法](https://github.com/wyh317/Study-Notebook/blob/master/%E7%AE%97%E6%B3%95/KMP%E7%AE%97%E6%B3%95.md)
 * [Manacher算法](https://github.com/wyh317/Study-Notebook/blob/master/%E7%AE%97%E6%B3%95/Manacher%E7%AE%97%E6%B3%95.md)
 * [BFPRT算法](https://github.com/wyh317/Study-Notebook/blob/master/%E7%AE%97%E6%B3%95/BFPRT%E7%AE%97%E6%B3%95.md)
+* [Morris遍历](https://github.com/wyh317/Study-Notebook/blob/master/%E7%AE%97%E6%B3%95/Morris%E9%81%8D%E5%8E%86.md)
 
 ## 操作系统
 * [进程与线程](https://github.com/wyh317/Study-Notebook/blob/master/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B.md)
