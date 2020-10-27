@@ -22,5 +22,10 @@
 ## Java
 * [Java虚拟机](https://github.com/wyh317/Study-Notebook/blob/master/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/Java%E8%99%9A%E6%8B%9F%E6%9C%BA.md)
 
+## 设计模式
+* [策略模式](https://github.com/wyh317/Study-Notebook/blob/master/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.md)
+* [工厂模式](https://github.com/wyh317/Study-Notebook/blob/master/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md)
+* [单例模式](https://github.com/wyh317/Study-Notebook/blob/master/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md)
+
 ## 工具
 * [Git](https://github.com/wyh317/Study-Notebook/blob/master/git.md)
