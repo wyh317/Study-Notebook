@@ -28,6 +28,7 @@
 * [工厂模式](https://github.com/wyh317/Study-Notebook/blob/master/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md)
 * [单例模式](https://github.com/wyh317/Study-Notebook/blob/master/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md)
 * [代理模式](https://github.com/wyh317/Study-Notebook/blob/master/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.md)
+* [装饰者模式](https://github.com/wyh317/Study-Notebook/blob/master/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F.md)
 
 ## 工具
 * [Git](https://github.com/wyh317/Study-Notebook/blob/master/git.md)
